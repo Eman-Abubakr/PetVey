@@ -16,7 +16,7 @@ import { AboutComponent } from './survey/survey/about.component'
 import { DetailsComponent } from './survey/survey/details.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,9 +24,6 @@ import { DetailsComponent } from './survey/survey/details.component';
     PartialsModule,
     SurveyModule,
     AuthModule,
-    SignInComponent,
-    AboutComponent,
-    DetailsComponent
 
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
@@ -35,8 +32,8 @@ import { DetailsComponent } from './survey/survey/details.component';
        { path: "inventory/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
        { path: "users/login", component: SignInComponent },
        { path: "users/register", component: SignUpComponent },
-       { path: "survey/about", component: AboutComponent}
-       { path: "survey/details", component: DetailsComponent}
+       { path: "survey/about", component: AboutComponent},
+       { path: "survey/details", component: DetailsComponent},
        { path: "**", redirectTo: "" }
     ])
   ],

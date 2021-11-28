@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './about.component.html'
 //   ,styleUrls: ['./app.component.css']
 })
-export class IndexComponent {
+export class AboutComponent {
    public title: string = 'About page';
 constructor() {}
 }

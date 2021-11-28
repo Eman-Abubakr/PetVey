@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Survey } from "src/app/model/survey.model";
 
 @Component({
     selector: "app-details",
@@ -6,5 +7,6 @@ import { Component } from "@angular/core";
 })
 export class DetailsComponent {
     public title: string = 'Details page';
+    public survey: Survey;
  constructor() {}
  }

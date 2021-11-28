@@ -18,7 +18,7 @@ export class ListComponent {
         return this.repository.getSurvey();        
     }
 
-    deleteMethod(id: string) {
+    deleteMethod(id: String) {
         if(confirm("Are you sure do you want to delete?")) {
             this.router.navigateByUrl("survey/delete/"+id);
         }
