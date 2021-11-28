@@ -9,11 +9,11 @@ export class SurveyRepository {
 
     constructor(private dataSource: RestDataSource) {
         dataSource.getSurveyList().subscribe(data => {
-            this.survey = data;
+            this.survey = data.surveyList;
         });
     }
 
-    getSurvey(): Survey[] {
+    getSurveyList(): Survey[] {
         return this.survey;
     }
 

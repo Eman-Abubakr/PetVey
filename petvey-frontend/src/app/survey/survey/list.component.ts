@@ -10,12 +10,14 @@ import { SurveyRepository } from "../../model/survey.repository";
 
 export class ListComponent {
 
+
     constructor(private repository: SurveyRepository,
         private router: Router) 
     { }
 
+
     get surveyList(): Survey[] {
-        return this.repository.getSurvey();        
+        return this.repository.getSurveyList();        
     }
 
     deleteMethod(id: String) {

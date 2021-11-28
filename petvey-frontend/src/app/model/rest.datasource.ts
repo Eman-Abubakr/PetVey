@@ -8,35 +8,36 @@ import { HttpHeaders } from '@angular/common/http';
 
 import { ResponseModel } from "./response.model";
 
-const PROTOCOL = "http";
+const PROTOCOL = "https";
 const PORT = 3000;
 
 @Injectable()
 export class RestDataSource {
 
+    backendUrl: string = "petvey-backend.herokuapp.com";
     baseUrl: string;
     auth_token: string;
 
     constructor(private http: HttpClient) {
-        this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+        this.baseUrl = `${PROTOCOL}://${this.backendUrl}/`;
     }
 
-    getSurveyList(): Observable<Survey[]> {
-        return this.http.get<Survey[]>(this.baseUrl + "survey/list");
+    getSurveyList(): Observable<any> {
+        return this.http.get<any>(this.baseUrl + "api/list");
     }
 
     insertSurvey(item: Survey): Observable<Survey> {
-        return this.http.post<Survey>(this.baseUrl + "survey/add",
+        return this.http.post<Survey>(this.baseUrl + "api/create",
             item, this.getOptions());
     }
 
     updateSurvey(item: Survey): Observable<Survey> {
-        return this.http.put<Survey>(`${this.baseUrl}survey/edit/${item._id}`,
+        return this.http.put<Survey>(`${this.baseUrl}api/edit/${item._id}`,
             item, this.getOptions());
     }
 
     deleteSurvey(id: string): Observable<ResponseModel> {
-        return this.http.delete<any>(`${this.baseUrl}survey/delete/${id}`,
+        return this.http.delete<any>(`${this.baseUrl}api/delete/${id}`,
             this.getOptions()).pipe(map(response => {
                 return response;
             }));
