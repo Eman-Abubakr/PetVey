@@ -64,17 +64,7 @@ Fall 2021
                                 <a (click)="deleteMethod(item._id)" class="btn bg-danger btn-danger btn-sm">
                                     <i class="fas fa-trash-alt"></i></a>
                             </td>
-                        
-                            <td class="text-center">
-                                <a routerLink ="/survey/details/{{ item._id }}">
-                                    {{ item.Title }}
-                                </a> 
-                            </td>
-                            <td class="text-center">{{ item.Author}}</td>
-                            <td class="text-center">{{ item.Description }}</td>
-                            <td class="text-center">{{ item.StartDate }}</td>
-                            <td class="text-center">{{ item.ExpiryDate}}</td>
-                                               
+                                              
                     </tr>
                 
             </table>
