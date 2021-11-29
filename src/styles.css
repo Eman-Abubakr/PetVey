@@ -40,7 +40,7 @@ h1 {
   font-size: 28px;
   font-weight: 500;
   line-height: 1.4;
-  text-transform: uppercase;
+
   letter-spacing: 0.7em;
   font-family: Dosis, arial, sans-serif;
   color: inherit;
@@ -55,7 +55,7 @@ h2 {
   font-size: 25px;
   font-weight: 500;
   line-height: 1.4;
-  text-transform: uppercase;
+
   letter-spacing: 0.7em;
   font-family: Dosis, arial, sans-serif;
   color: inherit;
@@ -70,7 +70,7 @@ h3 {
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
-  text-transform: uppercase;
+
   font-family: Dosis, arial, sans-serif;
   color: inherit;
   text-align: center;
@@ -88,7 +88,7 @@ input {
   background: #23becd;
   border: 2px solid transparent;
   font-weight: 600;
-  text-transform: uppercase;
+
   text-decoration: none;
   letter-spacing: 2px;
   box-shadow: none;
