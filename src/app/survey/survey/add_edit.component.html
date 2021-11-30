@@ -16,9 +16,14 @@ Fall 2021
             
                 <form novalidate #form="ngForm" (ngSubmit)="save(form)">
                 <div class="form-group">
+                
                     <input type="hidden"
                         name="id"
                         [(ngModel)]="item._id"
+                    >
+                    <input type="hidden"
+                        name="owner"
+                        [(ngModel)]="item.owner"
                     >
                     <label for="surveyTextField">Title</label>
                     <input type="text" class="form-control"

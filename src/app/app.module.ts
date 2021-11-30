@@ -7,6 +7,7 @@ import { SurveyModule } from './survey/survey/survey.module';
 import { indexModule } from './survey/index.module';
 import { IndexComponent } from './survey/index.component';
 import { ListComponent } from './survey/survey/list.component';
+import { MySurveysComponent } from './survey/survey/mysurveys.component';
 import { AuthModule } from "./survey/auth/auth.module";
 import { SignInComponent } from './survey/auth/login.component';
 import { SignUpComponent } from './survey/auth/register.component';
@@ -32,6 +33,7 @@ import { DetailsComponent } from './survey/survey/details.component';
       { path: "survey/about", component: AboutComponent},
       { path: "survey/details/:id", component: DetailsComponent},
       { path: "survey/list", component: ListComponent },
+      { path: "survey/mysurveys", component: MySurveysComponent},
        { path: "survey/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
        { path: "survey/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
        { path: "**", redirectTo: "" }

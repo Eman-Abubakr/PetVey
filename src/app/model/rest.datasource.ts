@@ -8,15 +8,16 @@ import { HttpHeaders } from '@angular/common/http';
 
 import { ResponseModel } from "./response.model";
 
-const PROTOCOL = "https";
+const PROTOCOL = "http";
 const PORT = 3000;
 
 @Injectable()
 export class RestDataSource {
-
-    backendUrl: string = "petvey-backend.herokuapp.com";
+    backendUrl: string = "localhost:3000";
+    //backendUrl: string = "petvey-backend.herokuapp.com";
     baseUrl: string;
     auth_token: string;
+    currentUserId: String;
 
     constructor(private http: HttpClient) {
         this.baseUrl = `${PROTOCOL}://${this.backendUrl}/`;
@@ -48,6 +49,7 @@ export class RestDataSource {
             username: username, password: pass
         }).pipe(map(response => {
             this.auth_token = response.success ? response.token : null;
+            this.currentUserId = response.success ? response.userID : null;
             return response.success;
         }));
     }
@@ -59,6 +61,10 @@ export class RestDataSource {
             }));
     }
 
+    getCurrentUserId(): String {
+        return this.currentUserId
+    }
+    
     private getOptions() {
         return {
             headers: new HttpHeaders({

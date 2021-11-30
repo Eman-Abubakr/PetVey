@@ -5,14 +5,15 @@ import { RouterModule } from "@angular/router";
 import { ModelModule } from "../../model/model.module";
 import { PartialsModule } from '../partials/partials.module';
 import { ListComponent } from "./list.component";
+import { MySurveysComponent } from "./mysurveys.component";
 import { AddEditComponent } from "./add_edit.component";
 import { AboutComponent } from "./about.component";
 import { DetailsComponent } from "./details.component";
 
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, RouterModule, PartialsModule],
-    declarations: [ListComponent, AddEditComponent,AboutComponent, DetailsComponent],
-    exports : [ListComponent, AddEditComponent,AboutComponent, DetailsComponent]
+    declarations: [ListComponent, MySurveysComponent, AddEditComponent,AboutComponent, DetailsComponent],
+    exports : [ListComponent, MySurveysComponent, AddEditComponent,AboutComponent, DetailsComponent]
 })
 
 export class SurveyModule {}

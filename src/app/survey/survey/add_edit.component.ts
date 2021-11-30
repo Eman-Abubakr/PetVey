@@ -27,7 +27,8 @@ export class AddEditComponent {
         if (this.editing) {
             this.item = repository.getItem(activeRoute.snapshot.params["id"]);
         } 
-              
+    
+        this.item.owner = this.repository.getCurrentUserID();
     }
 
     save(form: NgForm) {

@@ -3,6 +3,7 @@ export class Survey {
     constructor(
         
     public _id?: String,
+    public owner?: String,
     public CreationDate?: String,
     public StartDate?: String,
     public ExpiryDate?: String,
