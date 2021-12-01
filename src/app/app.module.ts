@@ -29,14 +29,14 @@ import { DetailsComponent } from './survey/survey/details.component';
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
       { path: "users/login", component: SignInComponent },
-       { path: "users/register", component: SignUpComponent },
+      { path: "users/register", component: SignUpComponent },
       { path: "survey/about", component: AboutComponent},
       { path: "survey/details/:id", component: DetailsComponent},
-      { path: "survey/list", component: ListComponent },
       { path: "survey/mysurveys", component: MySurveysComponent},
-       { path: "survey/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
-       { path: "survey/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
-       { path: "**", redirectTo: "" }
+      { path: "survey/list", component: ListComponent },
+      { path: "survey/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
+      { path: "survey/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
+      { path: "**", redirectTo: "" }
     ])
   ],
   providers: [

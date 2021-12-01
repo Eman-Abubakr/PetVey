@@ -2,29 +2,28 @@ import { Injectable } from "@angular/core";
 import { Survey } from "./survey.model";
 import { ResponseModel } from "./response.model";
 import { RestDataSource } from "./rest.datasource";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class SurveyRepository {
     private survey: Survey[] = [];
-    private currentUserId: String;
 
     constructor(private dataSource: RestDataSource) {
         dataSource.getSurveyList().subscribe(data => {
             this.survey = data.surveyList;
         });
-        this.currentUserId = dataSource.getCurrentUserId();
     }
 
     getSurveyList(): Survey[] {
-        console.log(this.survey);
         return this.survey;
     }
     
     getUserSurveyList(): Survey[] {
+        if (this.dataSource.currentUserId == null) return null;
+
         let userSurveys: Survey[] = [];
         this.survey.forEach(item => {
-            console.log(item);
-            if (item.owner === this.currentUserId) {
+            if (item.owner === this.dataSource.currentUserId.toString()) {
                 userSurveys.push(item);
             }
         });
@@ -36,7 +35,8 @@ export class SurveyRepository {
     }
 
     getCurrentUserID(): String {
-        return this.currentUserId;
+        if (this.dataSource.currentUserId == null) return null;
+        return this.dataSource.currentUserId.toString();
     }
     saveSurvey(item: Survey) {
         if (item._id == null || item._id == "") {

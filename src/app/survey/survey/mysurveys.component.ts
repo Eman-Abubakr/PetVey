@@ -17,6 +17,7 @@ export class MySurveysComponent {
 
 
     get surveyList(): Survey[] {
+        console.log(this.repository.getUserSurveyList());
         return this.repository.getUserSurveyList();        
     }
 
