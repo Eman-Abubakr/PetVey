@@ -26,19 +26,19 @@ Fall 2021
                   <i class="fas fa-paw"></i> Pet Survey
                 </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" routerLink="/survey/list">View Surveys</a></li>
-                <li><a class="dropdown-item" routerLink="/survey/add">Create a Survey</a></li>
-                <li><a class="dropdown-item" routerLink="/survey/mysurveys">My Surveys</a></li>
+                <li><a class="dropdown-item" routerLink="survey/list">View Surveys</a></li>
+                <li><a class="dropdown-item" routerLink="survey/add">Create a Survey</a></li>
+                <li><a class="dropdown-item" routerLink="survey/mysurveys">My Surveys</a></li>
               </ul>
             </li>
             <li class="nav-item">
-                  <a class="nav-link" routerLink="/survey/about">
+                  <a class="nav-link" routerLink="survey/about">
               <i class="fas fa-users"></i> About
               </a>
             </li>
             <li class="nav-item">
               <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Log Out ({{ auth.username }})</a>
-              <a *ngIf="auth.username == null" class="nav-link" routerLink="/users/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+              <a *ngIf="auth.username == null" class="nav-link" routerLink="users/login"><i class="fas fa-sign-in-alt"></i> Login</a>
             </li>
           </ul>
         </div>
