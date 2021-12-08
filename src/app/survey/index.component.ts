@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 //   ,styleUrls: ['./app.component.css']
 })
 export class IndexComponent {
-   public title: string = 'Index page';
-constructor() {}
+   public title: string = 'Index Page';
+   constructor() {}
 }

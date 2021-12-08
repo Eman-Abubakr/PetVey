@@ -27,9 +27,10 @@ export class AddEditComponent {
         if (this.editing) {
             this.item = repository.getItem(activeRoute.snapshot.params["id"]);
         } 
-    
+    else{
         this.item.owner = this.repository.getCurrentUserID();
     }
+}
 
     save(form: NgForm) {
         this.repository.saveSurvey(this.item);

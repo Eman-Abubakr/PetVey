@@ -8,13 +8,14 @@ Fall 2021
   <!-- Main Content -->
   <main class="container">
     <div class="row">
-        <h2>SURVEY lIST</h2>
+        <h2>SURVEY LIST</h2>
         <br>
     </div>
     <div class="container">
 
         
-        <div class="table-responsive">
+        <!-- <div class="table-responsive"> -->
+            <div class="table">
             <table class="table table-bordered table-striped table-hover">
                 <tr>
                     
@@ -23,7 +24,7 @@ Fall 2021
                     <th class="text-center">Description</th>
                     <th class="text-center">Start Date</th>
                     <th class="text-center">End Date</th>
-                    
+                   
                 </tr>
                 
                 <tr *ngFor="let item of surveyList">
@@ -39,7 +40,14 @@ Fall 2021
                     
                     <td class="text-center">{{ item.StartDate }}</td>
                     <td class="text-center">{{ item.ExpiryDate}}</td>
-                    
+                    <td class="text-center">
+                        <!-- <button [routerLink]="['/survey/edit/', item._id]" class="btn bg-primary btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt" ></i></button>
+                    </td>
+                    <td class="text-center">
+                        <a (click)="deleteMethod(item._id)" class="btn bg-danger btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i></a>
+                    </td> -->
                 </tr>
                 
             </table>

@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "../../model/auth.service";
 
 @Component({
-    selector: 'app-login',
+    //selector: 'app-login',
     templateUrl: "login.component.html"
 })
 
