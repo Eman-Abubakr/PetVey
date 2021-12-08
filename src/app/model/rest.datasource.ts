@@ -55,7 +55,9 @@ export class RestDataSource {
     }
 
     signupUser(user: User): Observable<ResponseModel> {
-        return this.http.post<ResponseModel>(this.baseUrl + "users/signup", {user})
+        var username = user.username;
+        var password = user.password;
+        return this.http.post<ResponseModel>(this.baseUrl + "users/signup", {username, password})
             .pipe(map(response => {
                 return response;
             }));
