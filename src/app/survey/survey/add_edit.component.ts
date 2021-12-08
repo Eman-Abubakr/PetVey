@@ -12,33 +12,33 @@ import { SurveyRepository } from "../../model/survey.repository";
 export class AddEditComponent {
 
     editing: boolean = false;
-    item: Survey = new Survey();
+    survey: Survey = new Survey();
 
     constructor(private repository: SurveyRepository,
                 private router: Router,
                 activeRoute: ActivatedRoute) 
     { 
         if (activeRoute.snapshot.params["mode"] == "delete") {
-            this.deleteItem(activeRoute.snapshot.params["id"]);
+            this.deletesurvey(activeRoute.snapshot.params["id"]);
         }
 
         this.editing = activeRoute.snapshot.params["mode"] == "edit";
         
         if (this.editing) {
-            this.item = repository.getItem(activeRoute.snapshot.params["id"]);
+            this.survey = repository.getItem(activeRoute.snapshot.params["id"]);
         } 
     
-        this.item.owner = this.repository.getCurrentUserID();
+        this.survey.owner = this.repository.getCurrentUserID();
     }
 
     save(form: NgForm) {
-        this.repository.saveSurvey(this.item);
-        this.router.navigateByUrl("survey/list");
+        this.repository.saveSurvey(this.survey);
+        this.router.navigateByUrl("survey/mysurveys");
     }
 
-    private deleteItem(id: string){
+    private deletesurvey(id: string){
         this.repository.deleteSurvey(id);
-        this.router.navigateByUrl("survey/list");
+        this.router.navigateByUrl("survey/mysurveys");
     }
     
 }

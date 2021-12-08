@@ -9,7 +9,7 @@ Fall 2021
   <!-- Main Content -->
   <main class="container">
     <div class="row">
-        <h2>SURVEY lIST</h2>
+        <h2>My Surveys</h2>
         <br>
         <div>
             
@@ -39,7 +39,7 @@ Fall 2021
                     <tr *ngFor="let item of surveyList">
 
                         <td class="text-center">
-                            <a routerLink="/survey/details/{{ item._id }}">
+                            <a routerLink="/survey/details/{{item._id}}">
                                 {{ item.Title }}
                             </a> 
                             </td>
@@ -54,7 +54,7 @@ Fall 2021
 
                             <!-- Edit button -->
                             
-                                <button [routerLink]="['/survey/edit/', item._id]" class="btn bg-primary btn-primary btn-sm">
+                                <button routerLink="/survey/edit/{{ item._id }}" class="btn bg-primary btn-primary btn-sm">
                                     <i class="fas fa-pencil-alt" ></i></button>
                             </td>
                             <td class="text-center">

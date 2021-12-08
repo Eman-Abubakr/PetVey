@@ -10,14 +10,11 @@ import { SurveyRepository } from "../../model/survey.repository";
 
 export class MySurveysComponent {
 
-
     constructor(private repository: SurveyRepository,
         private router: Router) 
     { }
 
-
     get surveyList(): Survey[] {
-        console.log(this.repository.getUserSurveyList());
         return this.repository.getUserSurveyList();        
     }
 

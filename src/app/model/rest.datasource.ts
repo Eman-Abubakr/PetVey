@@ -17,7 +17,7 @@ export class RestDataSource {
     backendUrl: string = "petvey-backend.herokuapp.com";
     baseUrl: string;
     auth_token: string;
-    currentUserId: Observable<String>;
+    currentUserId: string;
 
     constructor(private http: HttpClient) {
         this.baseUrl = `${PROTOCOL}://${this.backendUrl}/`;
@@ -50,7 +50,6 @@ export class RestDataSource {
         }).pipe(map(response => {
             this.auth_token = response.success ? response.token : null;
             this.currentUserId = response.success ? response.userID : null;
-            console.log(response);
             return response.success;
         }));
     }
@@ -62,7 +61,7 @@ export class RestDataSource {
             }));
     }
 
-    getCurrentUserId(): Observable<String> {
+    getCurrentUserId(): string {
         return this.currentUserId;
     }
     

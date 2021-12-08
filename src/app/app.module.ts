@@ -32,8 +32,8 @@ import { DetailsComponent } from './survey/survey/details.component';
       { path: "users/register", component: SignUpComponent },
       { path: "survey/about", component: AboutComponent},
       { path: "survey/details/:id", component: DetailsComponent},
-      { path: "survey/mysurveys", component: MySurveysComponent},
       { path: "survey/list", component: ListComponent },
+      { path: "survey/mysurveys", component: MySurveysComponent, canActivate: [AuthGuard] },
       { path: "survey/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "survey/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
       { path: "**", redirectTo: "" }

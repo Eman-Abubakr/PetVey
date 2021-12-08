@@ -7,11 +7,13 @@ import { Observable } from "rxjs";
 @Injectable()
 export class SurveyRepository {
     private survey: Survey[] = [];
+    private userSurveyList: Survey[] = [];
 
     constructor(private dataSource: RestDataSource) {
         dataSource.getSurveyList().subscribe(data => {
             this.survey = data.surveyList;
         });
+
     }
 
     getSurveyList(): Survey[] {
@@ -19,15 +21,12 @@ export class SurveyRepository {
     }
     
     getUserSurveyList(): Survey[] {
+        this.userSurveyList = [];
         if (this.dataSource.currentUserId == null) return null;
-
-        let userSurveys: Survey[] = [];
-        this.survey.forEach(item => {
-            if (item.owner === this.dataSource.currentUserId.toString()) {
-                userSurveys.push(item);
-            }
+        this.survey.forEach((survey: Survey) => {
+            if (survey.owner === this.getCurrentUserID()) this.userSurveyList.push(survey);
         });
-        return userSurveys;
+        return this.userSurveyList;
     }
 
     getItem(id: string): Survey {
@@ -38,6 +37,7 @@ export class SurveyRepository {
         if (this.dataSource.currentUserId == null) return null;
         return this.dataSource.currentUserId.toString();
     }
+
     saveSurvey(item: Survey) {
         if (item._id == null || item._id == "") {
             this.dataSource.insertSurvey(item)
