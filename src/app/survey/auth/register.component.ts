@@ -5,7 +5,7 @@ import { AuthService } from "../../model/auth.service";
 import { User } from "../../model/user.model";
 
 @Component({
-    selector: 'app-register',
+    //selector: 'app-register',
     templateUrl: "register.component.html"
 })
 
@@ -28,7 +28,7 @@ export class SignUpComponent {
                     console.log(response);
                     if (response.success) {
                         alert(response.message);
-                        this.router.navigateByUrl("/login");
+                        this.router.navigateByUrl("/users/login");
                     }
                     // Error message from the API.
                     this.message = response.message; 

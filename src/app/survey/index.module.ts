@@ -12,4 +12,4 @@ import { PartialsModule } from './partials/partials.module';
     exports: [IndexComponent]
 })
 
-export class indexModule {}
+export class IndexModule {}

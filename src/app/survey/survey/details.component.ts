@@ -9,7 +9,7 @@ import { SurveyRepository } from "src/app/model/survey.repository"
     templateUrl: "./details.component.html"
 })
 export class DetailsComponent {
-    public title: string = 'Details page';
+    public title: string = 'Details Page';
     public survey: Survey;
  constructor(private repository: SurveyRepository,
              private router: Router,

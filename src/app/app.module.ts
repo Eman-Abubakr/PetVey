@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PartialsModule } from './survey/partials/partials.module';
 import { SurveyModule } from './survey/survey/survey.module';
-import { indexModule } from './survey/index.module';
+import { IndexModule } from './survey/index.module';
 import { IndexComponent } from './survey/index.component';
 import { ListComponent } from './survey/survey/list.component';
 import { MySurveysComponent } from './survey/survey/mysurveys.component';
@@ -21,7 +21,7 @@ import { DetailsComponent } from './survey/survey/details.component';
   ],
   imports: [
     BrowserModule,
-    indexModule,
+    IndexModule,
     PartialsModule,
     SurveyModule,
     AuthModule,

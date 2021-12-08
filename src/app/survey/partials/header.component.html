@@ -7,22 +7,23 @@ Fall 2021
 
 
   <!-- Main Nav bar  -->  
-  
-  <nav class="navbar navbar-expand-sm fixed-top" id="mainNav" style="background-color: #23becd; height: 100px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" routerLink=""><img src="../../../assets/petvey-w.png" alt="logo" style="width:100px; margin-left: 20px; margin-right: 20px;"></a>
+  <nav class="navbar navbar-expand-lg navbar-dark text-uppercase fixed-top" id="mainNav" style="background-color: #23becd;">
+  <!-- <nav class="navbar navbar-expand-sm fixed-top" id="mainNav" style="background-color: #23becd; height: 100px;"> -->
+    <div class="container">
+      <div class="navbar-header" href="#">
+        <a class="navbar-brand" routerLink="">
+          <img src="/assets/petvey-w.png" alt="logo" style="width:100px; margin-left: 20px; margin-right: 20px;"></a>
       </div>
       <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
        </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                   <a class="nav-link" routerLink=""><i class="fas fa-home"></i> Home Page</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+                   <a class="nav-link active py-3 px-0 px-lg-3 rounded" routerLink=""><i class="fas fa-home"></i> Home Page</a>
             </li>   
-            <li class="nav-item dropdown"> 
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+            <li class="nav-item dropdown ms-auto"> 
+                <a class="nav-link active dropdown-toggle py-3 px-0 px-lg-3 rounded" role="button" data-bs-toggle="dropdown">
                   <i class="fas fa-paw"></i> Pet Survey
                 </a>
               <ul class="dropdown-menu">
@@ -31,14 +32,14 @@ Fall 2021
                 <li><a class="dropdown-item" routerLink="survey/mysurveys">My Surveys</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-                  <a class="nav-link" routerLink="survey/about">
+            <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link active py-3 px-0 px-lg-3 rounded" routerLink="survey/about">
               <i class="fas fa-users"></i> About
               </a>
             </li>
-            <li class="nav-item">
-              <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Log Out ({{ auth.username }})</a>
-              <a *ngIf="auth.username == null" class="nav-link" routerLink="users/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a *ngIf="auth.username != null" class="nav-link active py-3 px-0 px-lg-3 rounded" routerLink="" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Log Out({{ auth.username }})</a>
+              <a *ngIf="auth.username == null" class="nav-link active py-3 px-0 px-lg-3 rounded" routerLink="users/login"><i class="fas fa-sign-in-alt"></i>Sign In</a>
             </li>
           </ul>
         </div>
