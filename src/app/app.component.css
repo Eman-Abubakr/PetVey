@@ -1,1 +1,10 @@
 @import url("https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css");
+
+.surveyInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.surveyInfo > label {
+  grid-column: 1 / span 1;
+}

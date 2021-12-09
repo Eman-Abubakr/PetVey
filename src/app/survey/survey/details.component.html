@@ -8,25 +8,38 @@ Fall 2021
 <!-- Content for the Add_Edit page -->
 <div class="container">
     <div class="row">
-        <div class="offset-md-3 col-md-6">
-            <h1>{{ title }}</h1>
-
-                <div class="form-group">
-                    <label for="surveyTextField">Title</label>
-                    <strong>{{ survey.Title }}</strong>
+        <h2>{{ survey.Title }}</h2>
+        <div>
+            <div>
+                <h3><strong>Info</strong></h3>
+            </div>
+            <div class="surveyInfo">
+                <div class="form-group" id="creatorContainer">
+                    <label for="surveyTextField">Creator: </label>
+                    <strong>{{ survey.Author }}</strong>
                 </div>
-                <div class="form-group">
-                    <label for="surveyTextField">Description</label>
+                <div class="form-group" id="descriptionContainer">
+                    <label for="surveyTextField">Description: </label>
                     <strong>{{ survey.Description }}</strong>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="descriptionContainer">
+                    <label for="surveyTextField">Dates Available: </label>
+                    <strong>{{ survey.StartDate }} - {{ survey.ExpiryDate }}</strong>
+                </div>
+            </div>
+            <div class="surveyQuestionsContainer">
+                <div>
+                    <h3><strong>Questions</strong></h3>
+                </div>
+                <div class="form-group" id="questionsContainer">
                     <label for="statusTextField"></label>
                     <strong>{{ survey.Questions }}</strong>                    
                 </div>
-               
+                
+            </div>
                 <br />
                 
-                <a routerLink="survey/list" class="btn btn-warning">
+                <a routerLink="/survey/list" class="btn btn-warning">
                     <i class="fas fa-undo"></i> 
                     Cancel
                 </a>
