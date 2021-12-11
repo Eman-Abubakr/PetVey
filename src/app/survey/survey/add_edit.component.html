@@ -10,7 +10,7 @@ Fall 2021
 <!-- Content for the Add_Edit page -->
 <div class="container">
             
-            <h1>{{editing ? "Edit" : "New"}} Survey</h1>
+            <h1>{{editing ? "EDIT" : "NEW"}} SURVEY</h1>
             
                 <form novalidate #form="ngForm" (ngSubmit)="save(form)">
                 <div class="form-group">
@@ -71,11 +71,11 @@ Fall 2021
                         required>
                 </div>
                 <br>
-                <!--<div id="questionGroupContainer" *ngFor="let question of survey.Questions; let i = index">
+                <div id="questionGroupContainer" *ngFor="let question of survey.Questions; let i = index">
                     <div class="form-group">
                         <label for="Question{{i}}">Question {{i}}</label>
                     </div>
-                </div>  -->
+                </div> 
                 
                 <div>
                     <button class="btn btn-primary floated" id="addQuestionButton" type="button">
