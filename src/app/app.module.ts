@@ -16,6 +16,8 @@ import { AddEditComponent } from './survey/survey/add_edit.component'
 import { AboutComponent } from './survey/survey/about.component'
 import { DetailsComponent } from './survey/survey/details.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ChangePasswordComponent } from './survey/auth/changepassword.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
       { path: "", component: IndexComponent },
       { path: "users/login", component: SignInComponent },
       { path: "users/register", component: SignUpComponent },
+      { path: "users/changepassword", component: ChangePasswordComponent },
       { path: "survey/about", component: AboutComponent},
       { path: "survey/details/:id", component: DetailsComponent},
       { path: "survey/list", component: ListComponent },

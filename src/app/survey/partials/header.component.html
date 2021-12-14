@@ -41,6 +41,9 @@ Fall 2021
               <a *ngIf="auth.username != null" class="nav-link active" routerLink="" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Log Out({{ auth.username }})</a>
               <a *ngIf="auth.username == null" class="nav-link active" routerLink="users/login"><i class="fas fa-sign-in-alt"></i>Sign In</a>
             </li>
+            <li class="nav-item" *ngIf="auth.username != null">
+              <a class="nav-link active" routerLink="users/changepassword"><i class="fas fa-unlock-alt"></i>Change Password</a>
+            </li>
           </ul>
         </div>
       </div>
