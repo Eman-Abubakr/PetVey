@@ -42,25 +42,25 @@ Fall 2021
                         <input name="chkPet3" type="checkbox" value="Others">Others
                     </tr>
                     <tr>
-                        <td class="FieldLabel"><h4>2. Where does your pet sleep?</h4></td>
+                        <td class="FieldLabel"><h4>2. Where does your pet sleep?</h4>
                        
                         <input name="optSleep1" type="radio" value="Outside">Outside
                         <input name="optSleep2" type="radio" value="InYourBed">In Your Bed
                         <input name="optSleep3" type="radio" value="In a cage">In a cage
-                    
+                    </td>
                    </tr>
                    <br>
                     <tr>
-                        <td class="FieldLabel"><h4>3.For how many years have you been a pet owner?</h4></td>
+                        <td class="FieldLabel"><h4>3.For how many years have you been a pet owner?</h4>
                        
                         <input name="optyear1" type="radio" value="0-5">0-5 years
                         <input name="optyear2" type="radio" value="6-10">6-10 years
                         <input name="optyear3" type="radio" value=">10">More than 10 years
-                    
+                    </td>
                     </tr>
                     <tr>
                         <br>
-                        <h4>3.Do you have Suggestions?</h4>
+                        <h4>4.Do you have Suggestions to improve our page?</h4>
                         <td colspan="2">
                            <span><br> <textarea cols="50" name="txtMsg" rows="2"  placeholder="~You are welcome to leave your suggesions ~"></textarea></span></td>
                             <td>
@@ -68,15 +68,19 @@ Fall 2021
                         </tr>
                 </div>
                 
-            <!-- </div> -->
                 <br />
                 
-                <a routerLink="/survey/list" class="btn btn-warning">
-                    <i class="fas fa-undo"></i> 
-                    Cancel
-                </a>
-
-        <!-- </div> -->
-
-    <!-- </div>
-</div> -->
+                <td>
+                    <a href="survey/list" class="btn btn-secondary floated">
+                        <i class="fas fa-undo"></i> 
+                        Cancel
+                    </a>
+                    </td>
+    
+                    <td>
+                    <button class="btn btn-warning floated" type="submit">
+                        <i class="fas fa-check-circle"></i> 
+                        Submit
+                    </button>
+                </td>
+       
