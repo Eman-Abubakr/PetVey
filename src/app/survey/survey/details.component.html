@@ -9,9 +9,9 @@ Fall 2021
 <div class="container">
     <div class="row">
         <h2>{{ survey.Title }}</h2>
-        <div>
-            <div>
-                <h3><strong>Info:  </strong></h3>
+        <!-- <div> -->
+            <!-- <div> -->
+                <!-- <h3><strong>Info:  </strong></h3>
             </div>
             <div class="surveyInfo">
                 <div class="form-group" id="creatorContainer">
@@ -26,17 +26,49 @@ Fall 2021
                     <label for="surveyTextField">Dates Available:  </label>
                     <strong>{{ survey.StartDate }} - {{ survey.ExpiryDate }}</strong>
                 </div>
-            </div>
-            <div class="surveyQuestionsContainer">
-                <div>
+            </div> -->
+            <!-- <div class="surveyQuestionsContainer">
+                <div> -->
                     <h3><strong>Questions:  </strong></h3>
                 </div>
                 <div class="form-group" id="questionsContainer">
                     <label for="statusTextField"></label>
-                    <strong>{{ survey.Questions }}</strong>                    
+                    <!-- <strong>{{ survey.Questions }}</strong>                     -->
+                  
+                        <h4>1. What type of pet do you currently have? Please select all that apply.</h4>
+                    <tr>
+                        <input name="chkPet1" type="checkbox" value="Dog">Dog
+                        <input name="chkPet2" type="checkbox" value="Cat">Cat
+                        <input name="chkPet3" type="checkbox" value="Others">Others
+                    </tr>
+                    <tr>
+                        <td class="FieldLabel"><h4>2. Where does your pet sleep?</h4></td>
+                       
+                        <input name="optSleep1" type="radio" value="Outside">Outside
+                        <input name="optSleep2" type="radio" value="InYourBed">In Your Bed
+                        <input name="optSleep3" type="radio" value="In a cage">In a cage
+                    
+                   </tr>
+                   <br>
+                    <tr>
+                        <td class="FieldLabel"><h4>3.For how many years have you been a pet owner?</h4></td>
+                       
+                        <input name="optyear1" type="radio" value="0-5">0-5 years
+                        <input name="optyear2" type="radio" value="6-10">6-10 years
+                        <input name="optyear3" type="radio" value=">10">More than 10 years
+                    
+                    </tr>
+                    <tr>
+                        <br>
+                        <h4>3.Do you have Suggestions?</h4>
+                        <td colspan="2">
+                           <span><br> <textarea cols="50" name="txtMsg" rows="2"  placeholder="~You are welcome to leave your suggesions ~"></textarea></span></td>
+                            <td>
+                      </td>
+                        </tr>
                 </div>
                 
-            </div>
+            <!-- </div> -->
                 <br />
                 
                 <a routerLink="/survey/list" class="btn btn-warning">
@@ -44,7 +76,7 @@ Fall 2021
                     Cancel
                 </a>
 
-        </div>
+        <!-- </div> -->
 
-    </div>
-</div>
+    <!-- </div>
+</div> -->
