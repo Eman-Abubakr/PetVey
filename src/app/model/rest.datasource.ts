@@ -27,6 +27,10 @@ export class RestDataSource {
         return this.http.get<any>(this.baseUrl + "api/list");
     }
 
+    // getSurveyAnswers(): Observable<any> {
+    //     return this.http.get<any>(this.baseUrl + "api/answers");
+    // }
+
     insertSurvey(item: Survey): Observable<Survey> {
         return this.http.post<Survey>(this.baseUrl + "api/create",
             item, this.getOptions());

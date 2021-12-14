@@ -25,6 +25,16 @@ export class SurveyRepository {
         return this.userSurveyList;
     }
 
+
+    // getSurveyAnswers(): Survey[] {
+    //      this.userSurveyList = [];
+    //      if (this.dataSource.currentUserId == null) return null;
+    //      this.survey.forEach((survey: Survey) => {
+    //          if (survey.owner === this.getCurrentUserID()) this.userSurveyList.push(survey);
+    //      });
+    //      return this.getSurveyAnswers;
+    // }
+
     getItem(id: string): Survey {
         return (this.survey.find(item => item._id === id)!);
     }
