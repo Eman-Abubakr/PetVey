@@ -75,11 +75,11 @@ Fall 2021
                         <label for="Question{{i + 1}}">Question {{i + 1}}</label>
                         <input type="text" class="form-control" id="statusTextField" placeholder="Your Question" name="Question{{i + 1}}" [(ngModel)]="question.QuestionBody" name="questionBody">
                         <br><label for="AnswerTypeField">Answer Type</label>
-                        <mat-radio-group name="Question{{i}}AnswerType" [(ngModel)]="question.AnswerType">
-                            <mat-radio-button labelPosition="after" id="trueOrFalse" value="trueOrFalse" class="p-3">True or False</mat-radio-button>
-                            <mat-radio-button labelPosition="after" id="multipleChoice" value="multipleChoice" class="p-3">Multiple Choice</mat-radio-button>
-                            <mat-radio-button labelPosition="after" id="shortAnswer" value="shortAnswer" class="p-3">Short Answer</mat-radio-button>
-                            <mat-radio-button labelPosition="after" id="longAnswer" value="longAnswer" class="p-3">Long Answer</mat-radio-button>
+                        <mat-radio-group name="Question{{i}}AnswerType" [(ngModel)]="question.AnswerType" >
+                            <mat-radio-button labelPosition="after" value="trueOrFalse" class="p-3">True or False</mat-radio-button>
+                            <mat-radio-button labelPosition="after" value="multipleChoice" class="p-3">Multiple Choice</mat-radio-button>
+                            <mat-radio-button labelPosition="after" value="shortAnswer" class="p-3">Short Answer</mat-radio-button>
+                            <mat-radio-button labelPosition="after" value="longAnswer" class="p-3">Long Answer</mat-radio-button>
                         </mat-radio-group>
                     </div>
                 

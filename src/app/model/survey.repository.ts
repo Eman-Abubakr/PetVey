@@ -12,6 +12,7 @@ export class SurveyRepository {
     constructor(private dataSource: RestDataSource) {
         dataSource.getSurveyList().subscribe(data => {
             this.survey = data.surveyList;
+            this.userSurveyList = data.surveyList.filter((survey: Survey) => survey.owner === this.getCurrentUserID());
         });
 
     }
@@ -21,11 +22,6 @@ export class SurveyRepository {
     }
     
     getUserSurveyList(): Survey[] {
-        this.userSurveyList = [];
-        if (this.dataSource.currentUserId == null) return null;
-        this.survey.forEach((survey: Survey) => {
-            if (survey.owner === this.getCurrentUserID()) this.userSurveyList.push(survey);
-        });
         return this.userSurveyList;
     }
 
