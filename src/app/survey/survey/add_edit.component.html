@@ -71,11 +71,17 @@ Fall 2021
                         required>
                 </div>
                 <br>
-                <div id="questionGroupContainer">
-                    <div class="form-group" *ngFor="let question of survey.Questions; let i = index">
-                        <label for="Question{{i}}">Question {{i}}</label>
+                <div class="form-group" *ngFor="let question of survey?.Questions; let i = index" ngDefaultControl name="question">
+                        <label for="Question{{i + 1}}">Question {{i + 1}}</label>
+                        <input type="text" class="form-control" id="statusTextField" placeholder="Your Question" name="Question{{i + 1}}" [(ngModel)]="question.QuestionBody" name="questionBody">
+                        <br><label for="AnswerTypeField">Answer Type</label>
+                        <mat-radio-group name="Question{{i}}AnswerType" [(ngModel)]="question.AnswerType">
+                            <mat-radio-button labelPosition="after" id="trueOrFalse" value="trueOrFalse" class="p-3">True or False</mat-radio-button>
+                            <mat-radio-button labelPosition="after" id="multipleChoice" value="multipleChoice" class="p-3">Multiple Choice</mat-radio-button>
+                            <mat-radio-button labelPosition="after" id="shortAnswer" value="shortAnswer" class="p-3">Short Answer</mat-radio-button>
+                            <mat-radio-button labelPosition="after" id="longAnswer" value="longAnswer" class="p-3">Long Answer</mat-radio-button>
+                        </mat-radio-group>
                     </div>
-                </div> 
                 
                 <div>
                     <button class="btn btn-primary floated" id="addQuestionButton" type="button" (click)="addQuestionButtonClick()">

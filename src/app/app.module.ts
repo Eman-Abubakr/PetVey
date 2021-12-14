@@ -15,6 +15,7 @@ import { AuthGuard } from "./survey/auth/auth.guard";
 import { AddEditComponent } from './survey/survey/add_edit.component'
 import { AboutComponent } from './survey/survey/about.component'
 import { DetailsComponent } from './survey/survey/details.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,9 @@ import { DetailsComponent } from './survey/survey/details.component';
       { path: "survey/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "survey/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
       { path: "**", redirectTo: "" }
-    ])
+    ]),
+
+    NoopAnimationsModule
   ],
   providers: [
     AuthGuard
