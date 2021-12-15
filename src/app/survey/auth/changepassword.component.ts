@@ -22,6 +22,7 @@ export class ChangePasswordComponent {
         if (form.valid) {
             // perform authentication
             this.auth.authenticate(this.username, this.newPassword)
+           // this.auth.authenticate(this.newPassword, this.confirmPassword)
                 .subscribe(response => {
                     if (response) {
                         this.router.navigateByUrl(this.auth.redirectUrl || "");
@@ -32,18 +33,18 @@ export class ChangePasswordComponent {
             this.message = "Form Data Invalid";
         }
 
-        if (form.valid) {
-            // perform authentication
-            this.auth.authenticate(this.username, this.confirmPassword)
-                .subscribe(response => {
-                    if (response) {
-                        this.router.navigateByUrl(this.auth.redirectUrl || "");
-                    }
-                    this.message = "Authentication Failed";
-                });
-        } else {
-            this.message = "Form Data Invalid";
-        }
+        // if (form.valid) {
+        //     // perform authentication
+        //     this.auth.authenticate(this.username, this.confirmPassword)
+        //         .subscribe(response => {
+        //             if (response) {
+        //                 this.router.navigateByUrl(this.auth.redirectUrl || "");
+        //             }
+        //             this.message = "Authentication Failed";
+        //         });
+        // } else {
+        //     this.message = "Form Data Invalid";
+        // }
 
         
         
