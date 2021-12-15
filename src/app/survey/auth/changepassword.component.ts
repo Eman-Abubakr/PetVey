@@ -9,14 +9,16 @@ import { AuthService } from "../../model/auth.service";
 })
 
 export class ChangePasswordComponent {
-    public username: string;
+    public confirmPassword: string;
     public password: string;
+    public newPassword: string;
     public message: string;
+    public username: string;
 
     constructor(private router: Router,
         private auth: AuthService) { }
 
-    authenticate(form: NgForm) {
+    changePassword(form: NgForm) {
         if (form.valid) {
             // perform authentication
             this.auth.authenticate(this.username, this.password)

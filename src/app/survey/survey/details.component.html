@@ -4,83 +4,22 @@ Group project
 Comp 229 Sec009
 Fall 2021
 -->
+<h1>{{ surveyToTake.Title }}</h1>
 
-<!-- Content for the Add_Edit page -->
-<div class="container">
-    <div class="row">
-        <h2>{{ survey.Title }}</h2>
-        <!-- <div> -->
-            <!-- <div> -->
-                <!-- <h3><strong>Info:  </strong></h3>
+<form>
+    <div *ngFor="let question of surveyToTake.Questions; let i = index">
+        <h2>Question {{ i + 1 }}: {{ question.QuestionBody }}</h2>
+        <div class="form-group">
+            <mat-radio-group *ngIf="question.AnswerType === 'trueOrFalse'">
+                <mat-radio-button labelPosition="after" value="true" class="p-3">True</mat-radio-button>
+                <mat-radio-button labelPosition="after" value="false" class="p-3">False</mat-radio-button>
+            </mat-radio-group>
+            <div *ngIf="question.AnswerType === 'shortAnswer'">
+                <input type="text">
             </div>
-            <div class="surveyInfo">
-                <div class="form-group" id="creatorContainer">
-                    <label for="surveyTextField">Creator: </label>
-                    <strong>{{ survey.Author }}</strong>
-                </div>
-                <div class="form-group" id="descriptionContainer">
-                    <label for="surveyTextField">Description: </label>
-                    <strong>{{ survey.Description }}</strong>
-                </div>
-                <div class="form-group" id="descriptionContainer">
-                    <label for="surveyTextField">Dates Available:  </label>
-                    <strong>{{ survey.StartDate }} - {{ survey.ExpiryDate }}</strong>
-                </div>
-            </div> -->
-            <!-- <div class="surveyQuestionsContainer">
-                <div> -->
-                    <h3><strong>Questions:  </strong></h3>
-                </div>
-                <div class="form-group" id="questionsContainer">
-                    <label for="statusTextField"></label>
-                    <!-- <strong>{{ survey.Questions }}</strong>                     -->
-                  
-                        <h4>1. What type of pet do you currently have? Please select all that apply.</h4>
-                    <tr>
-                        <input name="chkPet1" type="checkbox" value="Dog">Dog
-                        <input name="chkPet2" type="checkbox" value="Cat">Cat
-                        <input name="chkPet3" type="checkbox" value="Others">Others
-                    </tr>
-                    <tr>
-                        <td class="FieldLabel"><h4>2. Where does your pet sleep?</h4>
-                       
-                        <input name="optSleep1" type="radio" value="Outside">Outside
-                        <input name="optSleep2" type="radio" value="InYourBed">In Your Bed
-                        <input name="optSleep3" type="radio" value="In a cage">In a cage
-                    </td>
-                   </tr>
-                   <br>
-                    <tr>
-                        <td class="FieldLabel"><h4>3.For how many years have you been a pet owner?</h4>
-                       
-                        <input name="optyear1" type="radio" value="0-5">0-5 years
-                        <input name="optyear2" type="radio" value="6-10">6-10 years
-                        <input name="optyear3" type="radio" value=">10">More than 10 years
-                    </td>
-                    </tr>
-                    <tr>
-                        <br>
-                        <h4>4.Do you have Suggestions to improve our page?</h4>
-                        <td colspan="2">
-                           <span><br> <textarea cols="50" name="txtMsg" rows="2"  placeholder="~You are welcome to leave your suggesions ~"></textarea></span></td>
-                            <td>
-                      </td>
-                        </tr>
-                </div>
-                
-                <br />
-                
-                <td>
-                    <a href="survey/list" class="btn btn-secondary floated">
-                        <i class="fas fa-undo"></i> 
-                        Cancel
-                    </a>
-                    </td>
-    
-                    <td>
-                    <button class="btn btn-warning floated" type="submit">
-                        <i class="fas fa-check-circle"></i> 
-                        Submit
-                    </button>
-                </td>
-       
+            <div *ngIf="question.AnswerType === 'longAnswer'">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
