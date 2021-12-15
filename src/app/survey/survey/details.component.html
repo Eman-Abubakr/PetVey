@@ -6,21 +6,21 @@ Fall 2021
 -->
 <h1>{{ surveyToTake.Title }}</h1>
 
-<form>
+<form novalidate #form="ngForm" (ngSubmit)="saveResponse(form)" id="surveyForm">
     <div *ngFor="let question of surveyToTake.Questions; let i = index">
         <h4 class="questionLabel">Question {{ i + 1 }}: {{ question.QuestionBody }}</h4>
         <div class="form-group">
-            <mat-radio-group *ngIf="question.AnswerType === 'trueOrFalse'">
+            <mat-radio-group *ngIf="question.AnswerType === 'trueOrFalse'" name="trueOrFalse" ngDefaultControl [(ngModel)]="surveyResponse.Questions[i].answer">
                 <mat-radio-button labelPosition="after" value="true" class="p-3">True</mat-radio-button>
                 <mat-radio-button labelPosition="after" value="false" class="p-3">False</mat-radio-button>
             </mat-radio-group>
-            <div *ngIf="question.AnswerType === 'shortAnswer'">
+            <div *ngIf="question.AnswerType === 'shortAnswer'" name="shortAnswer" ngDefaultControl [(ngModel)]="surveyResponse.Questions[i].answer">
                 <input type="text">
             </div>
-            <div *ngIf="question.AnswerType === 'longAnswer'">
+            <div *ngIf="question.AnswerType === 'longAnswer'" name="answer" ngDefaultControl [(ngModel)]="surveyResponse.Questions[i].answer">
                 <textarea name="" id="" cols="60" rows="5"></textarea>
             </div>
-            <mat-radio-group *ngIf="question.AnswerType === 'multipleChoice'">
+            <mat-radio-group *ngIf="question.AnswerType === 'multipleChoice'" name="answer" ngDefaultControl [(ngModel)]="surveyResponse.Questions[i].answer">
                 <mat-radio-button labelPosition="after" value="{{ question.MultipleChoiceAnswers[0] }}" class="p-3">{{ question.MultipleChoiceAnswers[0] }}</mat-radio-button>
                 <mat-radio-button labelPosition="after" value="{{ question.MultipleChoiceAnswers[1] }}" class="p-3">{{ question.MultipleChoiceAnswers[1] }}</mat-radio-button>
                 <mat-radio-button labelPosition="after" value="{{ question.MultipleChoiceAnswers[2] }}" class="p-3">{{ question.MultipleChoiceAnswers[2] }}</mat-radio-button>
@@ -28,4 +28,8 @@ Fall 2021
             </mat-radio-group>
         </div>
     </div>
+    <button class="btn btn-warning floated" type="submit">
+        <i class="fas fa-check-circle"></i> 
+        Submit
+    </button>
 </form>

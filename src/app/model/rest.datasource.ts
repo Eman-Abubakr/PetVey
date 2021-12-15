@@ -7,14 +7,15 @@ import { map } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
 
 import { ResponseModel } from "./response.model";
+import { SurveyResponse } from "./surveyresponse.model";
 
-const PROTOCOL = "https";
+const PROTOCOL = "http";
 const PORT = 3000;
 
 @Injectable()
 export class RestDataSource {
-    //backendUrl: string = "localhost:3000";
-    backendUrl: string = "petvey-backend.herokuapp.com";
+    backendUrl: string = "localhost:3000";
+    //backendUrl: string = "petvey-backend.herokuapp.com";
     baseUrl: string;
     auth_token: string;
     currentUserId: string;
@@ -69,6 +70,12 @@ export class RestDataSource {
 
     changeUserPassword() {
         console.log("needs to be implemented");
+    }
+
+    submitUserSurveyResponse(item: SurveyResponse, survey: Survey) {
+        console.log(item);
+        console.log(`${this.baseUrl}api/details/${survey._id}`);
+        return this.http.post<any>(`${this.baseUrl}api/details/${survey._id}`, {item}, this.getOptions());
     }
 
     getCurrentUserId(): string {

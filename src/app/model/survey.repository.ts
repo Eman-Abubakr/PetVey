@@ -3,6 +3,7 @@ import { Survey } from "./survey.model";
 import { ResponseModel } from "./response.model";
 import { RestDataSource } from "./rest.datasource";
 import { Observable } from "rxjs";
+import { SurveyResponse } from "./surveyresponse.model";
 
 @Injectable()
 export class SurveyRepository {
@@ -67,5 +68,9 @@ export class SurveyRepository {
                 alert(response.message);
             }
         })
+    }
+
+    submitUserSurveyResponse(item: SurveyResponse, survey: Survey) {
+        return this.dataSource.submitUserSurveyResponse(item, survey);
     }
 }
