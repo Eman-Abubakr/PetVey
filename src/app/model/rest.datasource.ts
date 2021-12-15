@@ -67,6 +67,10 @@ export class RestDataSource {
             }));
     }
 
+    changeUserPassword() {
+        console.log("needs to be implemented");
+    }
+
     getCurrentUserId(): string {
         return this.currentUserId;
     }

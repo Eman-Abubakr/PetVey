@@ -81,6 +81,20 @@ Fall 2021
                             <mat-radio-button labelPosition="after" value="shortAnswer" class="p-3">Short Answer</mat-radio-button>
                             <mat-radio-button labelPosition="after" value="longAnswer" class="p-3">Long Answer</mat-radio-button>
                         </mat-radio-group>
+                        <div *ngIf="question.AnswerType === 'multipleChoice'">
+                            <label for="choice1">
+                            <input type="text" id="choice1" [(ngModel)]="question.MultipleChoiceAnswers[0]" name="multipleChoiceAnswers0"> Choice 1:
+                            </label>
+                            <label for="choice2">
+                            <input type="text" id="choice2" [(ngModel)]="question.MultipleChoiceAnswers[1]" name="multipleChoiceAnswers1"> Choice 2:
+                            </label>
+                            <label for="choice3">
+                            <input type="text" id="choice3" [(ngModel)]="question.MultipleChoiceAnswers[2]" name="multipleChoiceAnswers2"> Choice 3:
+                            </label>
+                            <label for="choice4">
+                            <input type="text" id="choice4" [(ngModel)]="question.MultipleChoiceAnswers[3]" name="multipleChoiceAnswers3"> Choice 4:
+                            </label>
+                        </div>
                     </div>
                 
                     <div>
