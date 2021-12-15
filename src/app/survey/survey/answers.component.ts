@@ -5,24 +5,21 @@ import { SurveyRepository } from "src/app/model/survey.repository"
 
 
 @Component({
-    selector: "answers",
+    selector: "app-answers",
     templateUrl: "answers.component.html"
 })
 
 export class AnswersComponent {
     public title: string = 'SURVEY ANSWERS';
-    //public survey: Survey;
+    public survey: Survey;
     public answers: AnswersComponent;
- constructor(private repository: SurveyRepository,
-             private router: Router){}
-
-             get surveyAnswers ():Survey[] {
-                return this.repository.getSurveyAnswers()
-
-            //  activeRoute: ActivatedRoute) {
-            //     this.survey = repository.getItem(activeRoute.snapshot.params["id"]);
-                // console.log(this.survey);          
- }
+    
+    constructor(private repository: SurveyRepository,
+                private router: Router,
+                private activeRoute: ActivatedRoute){
+                    this.survey = repository.getItem(activeRoute.snapshot.params["id"]);
+                    console.log(this.survey);
+                }
  }
 
 

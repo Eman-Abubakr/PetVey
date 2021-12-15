@@ -39,10 +39,9 @@ import { ChangePasswordComponent } from './survey/auth/changepassword.component'
       { path: "survey/details/:id", component: DetailsComponent},
       { path: "survey/list", component: ListComponent },
       { path: "survey/mysurveys", component: MySurveysComponent, canActivate: [AuthGuard] },
+      { path: "survey/answers/:id", component: AnswersComponent, canActivate: [AuthGuard] },
       { path: "survey/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "survey/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
-      { path: "survey/:mode/:id", component: AnswersComponent, canActivate: [AuthGuard] },
-      { path: "survey/:mode", component: AnswersComponent, canActivate: [AuthGuard]},
       { path: "**", redirectTo: "" }
     ]),
 

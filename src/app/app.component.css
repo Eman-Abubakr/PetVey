@@ -8,3 +8,6 @@
 .surveyInfo > label {
   grid-column: 1 / span 1;
 }
+.questionLabel {
+  font-weight: 200;
+}
