@@ -20,6 +20,12 @@ Fall 2021
             <div *ngIf="question.AnswerType === 'longAnswer'">
                 <textarea name="" id="" cols="60" rows="5"></textarea>
             </div>
+            <mat-radio-group *ngIf="question.AnswerType === 'multipleChoice'">
+                <mat-radio-button labelPosition="after" value="{{ question.MultipleChoiceAnswers[0] }}" class="p-3">{{ question.MultipleChoiceAnswers[0] }}</mat-radio-button>
+                <mat-radio-button labelPosition="after" value="{{ question.MultipleChoiceAnswers[1] }}" class="p-3">{{ question.MultipleChoiceAnswers[1] }}</mat-radio-button>
+                <mat-radio-button labelPosition="after" value="{{ question.MultipleChoiceAnswers[2] }}" class="p-3">{{ question.MultipleChoiceAnswers[2] }}</mat-radio-button>
+                <mat-radio-button labelPosition="after" value="{{ question.MultipleChoiceAnswers[3] }}" class="p-3">{{ question.MultipleChoiceAnswers[3] }}</mat-radio-button>
+            </mat-radio-group>
         </div>
     </div>
 </form>
