@@ -11,6 +11,8 @@ import { AuthService } from "../../model/auth.service";
 export class ChangePasswordComponent {
     public username: string;
     public password: string;
+    public newPassword: string;
+    public confirmPassword: string;
     public message: string;
 
     constructor(private router: Router,
@@ -19,7 +21,35 @@ export class ChangePasswordComponent {
     authenticate(form: NgForm) {
         if (form.valid) {
             // perform authentication
-            this.auth.authenticate(this.username, this.password)
+            this.auth.authenticate(this.username, this.newPassword)
+                .subscribe(response => {
+                    if (response) {
+                        this.router.navigateByUrl(this.auth.redirectUrl || "");
+                    }
+                    this.message = "Authentication Failed";
+                });
+        } else {
+            this.message = "Form Data Invalid";
+        }
+
+        if (form.valid) {
+            // perform authentication
+            this.auth.authenticate(this.username, this.confirmPassword)
+                .subscribe(response => {
+                    if (response) {
+                        this.router.navigateByUrl(this.auth.redirectUrl || "");
+                    }
+                    this.message = "Authentication Failed";
+                });
+        } else {
+            this.message = "Form Data Invalid";
+        }
+
+        
+        
+        if (form.valid) {
+            // perform authentication
+            this.auth.authenticate(this.newPassword, this.confirmPassword)
                 .subscribe(response => {
                     if (response) {
                         this.router.navigateByUrl(this.auth.redirectUrl || "");

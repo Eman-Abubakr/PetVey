@@ -10,12 +10,12 @@ import { AddEditComponent } from "./add_edit.component";
 import { AboutComponent } from "./about.component";
 import { DetailsComponent } from "./details.component";
 import { MatRadioModule } from "@angular/material/radio";
-//import { AnswersComponent } from "./answers.component";
+import { AnswersComponent } from "./answers.component";
 
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, RouterModule, PartialsModule, MatRadioModule],
-    declarations: [ListComponent, MySurveysComponent, AddEditComponent,AboutComponent, DetailsComponent],//AnswersComponent
-    exports : [ListComponent, MySurveysComponent, AddEditComponent,AboutComponent, DetailsComponent]//AnswersComponent
+    declarations: [ListComponent, MySurveysComponent, AddEditComponent,AboutComponent, DetailsComponent, AnswersComponent],
+    exports : [ListComponent, MySurveysComponent, AddEditComponent,AboutComponent, DetailsComponent, AnswersComponent]
 })
 
 export class SurveyModule {}
