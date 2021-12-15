@@ -11,12 +11,17 @@ import { SurveyRepository } from "src/app/model/survey.repository"
 
 export class AnswersComponent {
     public title: string = 'SURVEY ANSWERS';
-    public survey: Survey;
+    //public survey: Survey;
+    public answers: AnswersComponent;
  constructor(private repository: SurveyRepository,
-             private router: Router,
-             activeRoute: ActivatedRoute) {
-                 this.survey = repository.getItem(activeRoute.snapshot.params["id"]);
-                 console.log(this.survey);          
+             private router: Router){}
+
+             get surveyAnswers ():Survey[] {
+                return this.repository.getSurveyAnswers()
+
+            //  activeRoute: ActivatedRoute) {
+            //     this.survey = repository.getItem(activeRoute.snapshot.params["id"]);
+                // console.log(this.survey);          
  }
  }
 

@@ -15,7 +15,7 @@ import { AuthGuard } from "./survey/auth/auth.guard";
 import { AddEditComponent } from './survey/survey/add_edit.component'
 import { AboutComponent } from './survey/survey/about.component'
 import { DetailsComponent } from './survey/survey/details.component';
-//import { AnswersComponent } from './survey/survey/answers.component';
+import { AnswersComponent } from './survey/survey/answers.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ChangePasswordComponent } from './survey/auth/changepassword.component';
 
@@ -41,8 +41,8 @@ import { ChangePasswordComponent } from './survey/auth/changepassword.component'
       { path: "survey/mysurveys", component: MySurveysComponent, canActivate: [AuthGuard] },
       { path: "survey/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "survey/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
-      // { path: "survey/:mode/:id", component: AnswersComponent, canActivate: [AuthGuard] },
-      // { path: "survey/:mode", component: AnswersComponent, canActivate: [AuthGuard]},
+      { path: "survey/:mode/:id", component: AnswersComponent, canActivate: [AuthGuard] },
+      { path: "survey/:mode", component: AnswersComponent, canActivate: [AuthGuard]},
       { path: "**", redirectTo: "" }
     ]),
 
