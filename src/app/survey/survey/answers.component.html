@@ -9,5 +9,6 @@ Fall 2021
     <div class="row">
         <h1> SURVEY ANSWERS </h1>
         <h2>{{ surveyToTake.Title }}</h2>
+        <form novalidate #form="ngForm" (ngSubmit)="surveyResponse" id="surveyForm"></form>
     </div>
 </div>

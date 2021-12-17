@@ -5,7 +5,6 @@ import { Survey } from "./survey.model";
 import { User } from "./user.model";
 import { map } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
-
 import { ResponseModel } from "./response.model";
 import { SurveyResponse } from "./surveyresponse.model";
 
@@ -30,6 +29,7 @@ export class RestDataSource {
 
     getSurveyAnswers(): Observable<any> {
         return this.http.get<any>(this.baseUrl + "api/answers");
+        
     }
 
     insertSurvey(item: Survey): Observable<Survey> {
