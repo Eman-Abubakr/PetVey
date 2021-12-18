@@ -6,7 +6,7 @@ Fall 2021
 -->
 <h1>{{ surveyToTake.Title }}</h1>
 
-<form novalidate #form="ngForm" (ngSubmit)="saveResponse(form)" id="surveyForm">
+<form class="offset-md-4 mt-5 col-md-3" novalidate #form="ngForm" (ngSubmit)="saveResponse(form)" id="surveyForm">
     <div *ngFor="let question of surveyToTake.Questions; let i = index">
         <h4 class="questionLabel">Question {{ i + 1 }}: {{ question.QuestionBody }}</h4>
         <div class="form-group">
