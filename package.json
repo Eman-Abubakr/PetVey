@@ -50,5 +50,23 @@
   "engines": {
     "node": "14.17.6",
     "npm": "7.23.0"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eman-Abubakr/PetVey.git"
+  },
+  "keywords": [
+    "Angular",
+    "js-",
+    "pet",
+    "survey"
+  ],
+  "author": "Eman Abubakr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eman-Abubakr/PetVey/issues"
+  },
+  "homepage": "https://github.com/Eman-Abubakr/PetVey#readme"
 }
